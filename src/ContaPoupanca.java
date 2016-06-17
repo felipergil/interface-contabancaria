@@ -6,7 +6,7 @@
 
 /**
  *
- * @author NOTFELIPE
+ * @author Felipe Rodrigues - RA 24843
  */
 public class ContaPoupanca implements IConta {
     
