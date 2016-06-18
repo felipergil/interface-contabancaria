@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -155,7 +158,11 @@ public class Tela extends javax.swing.JFrame {
 
     private void btnDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositarActionPerformed
         Double valorDeposito = Double.parseDouble(txtDepositar.getText());
-        if (rbtncc.isSelected()) {
+        
+        if(!rbtncc.isSelected() && !rbtncp.isSelected()) {
+            JOptionPane.showMessageDialog(rootPane, "Selecione se deseja efetuar o depósito na "
+                    + "conta corrente ou conta poupança");
+        } else if (rbtncc.isSelected()) {
             corrente.efetuarDeposito(valorDeposito);
             
         } else {
@@ -165,6 +172,11 @@ public class Tela extends javax.swing.JFrame {
 
     private void btnSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacarActionPerformed
         Double valorSaque = Double.parseDouble(txtSacar.getText());
+        
+        if(!rbtncc.isSelected() && !rbtncp.isSelected()) {
+            JOptionPane.showMessageDialog(rootPane, "Selecione se deseja sacar da "
+                    + "conta corrente ou conta poupança");
+        } else
         if (rbtncc.isSelected()) {
             corrente.efetuarSaque(valorSaque);
         } else {
